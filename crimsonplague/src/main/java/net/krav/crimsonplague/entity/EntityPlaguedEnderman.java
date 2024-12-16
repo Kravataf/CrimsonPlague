@@ -74,7 +74,7 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCustom.class, renderManager -> {
-			return new RenderLiving(renderManager, new ModelplaguedEndermanV1(), 0.6f) {
+			return new RenderLiving(renderManager, new ModelplaguedEndermanV1(), 0.5f) {
 				protected ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("crimsonplague:textures/plaguednderman1texture.png");
 				}
@@ -84,7 +84,7 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 	public static class EntityCustom extends EntityEnderman {
 		public EntityCustom(World world) {
 			super(world);
-			setSize(0.45f, 2f);
+			setSize(0.5f, 3f);
 			experienceValue = 0;
 			this.isImmuneToFire = false;
 			setNoAI(!true);
@@ -132,15 +132,6 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 		}
 
 		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source == DamageSource.FALL)
-				return false;
-			if (source == DamageSource.DROWN)
-				return false;
-			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
 		public void onKillEntity(EntityLivingBase entity) {
 			super.onKillEntity(entity);
 			int x = (int) this.posX;
@@ -163,11 +154,11 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 			if (this.getEntityAttribute(SharedMonsterAttributes.ARMOR) != null)
 				this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0D);
 			if (this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
-				this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1D);
+				this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4D);
 			if (this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
-				this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60D);
+				this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45D);
 			if (this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) != null)
-				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(15D);
+				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5D);
 		}
 	}
 
