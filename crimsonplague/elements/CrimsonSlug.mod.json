@@ -96,7 +96,7 @@
     "rangedAttackItem": {
       "value": ""
     },
-    "spawnThisMob": true,
+    "spawnThisMob": false,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "creature",

@@ -3,10 +3,8 @@ package net.krav.crimsonplague.entity;
 
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 import net.minecraft.world.biome.Biome;
@@ -20,12 +18,8 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.monster.EntitySpider;
-import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -33,7 +27,6 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.Entity;
@@ -61,12 +54,6 @@ public class EntityPlaguedHuman extends ElementsCrimsonPlague.ModElement {
 	public void initElements() {
 		elements.entities.add(() -> EntityEntryBuilder.create().entity(EntityCustom.class)
 				.id(new ResourceLocation("crimsonplague", "plaguedhuman"), ENTITYID).name("plaguedhuman").tracker(64, 3, true).egg(-1, -1).build());
-	}
-
-	@Override
-	public void init(FMLInitializationEvent event) {
-		Biome[] spawnBiomes = allbiomes(Biome.REGISTRY);
-		EntityRegistry.addSpawn(EntityCustom.class, 20, 1, 3, EnumCreatureType.MONSTER, spawnBiomes);
 	}
 
 	private Biome[] allbiomes(net.minecraft.util.registry.RegistryNamespaced<ResourceLocation, Biome> in) {
@@ -100,20 +87,16 @@ public class EntityPlaguedHuman extends ElementsCrimsonPlague.ModElement {
 		@Override
 		protected void initEntityAI() {
 			super.initEntityAI();
-			this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-			this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.2, true));
-			this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAnimal.class, false, false));
-			this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, false, false));
-			this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPlayerMP.class, false, false));
-			this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityVillager.class, false, false));
-			this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityCreeper.class, false, false));
-			this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityZombie.class, false, false));
-			this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntitySkeleton.class, false, false));
-			this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntitySlime.class, false, false));
-			this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntitySpider.class, false, false));
-			this.tasks.addTask(12, new EntityAISwimming(this));
-			this.tasks.addTask(13, new EntityAIWander(this, 1));
-			this.tasks.addTask(14, new EntityAIBreakDoor(this));
+			this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityAnimal.class, true, false));
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true, false));
+			this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityPlayerMP.class, true, false));
+			this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, true, false));
+			this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true, false));
+			this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false));
+			this.tasks.addTask(7, new EntityAIAttackMelee(this, 1.2, true));
+			this.tasks.addTask(8, new EntityAISwimming(this));
+			this.tasks.addTask(9, new EntityAIWander(this, 1));
+			this.tasks.addTask(10, new EntityAIBreakDoor(this));
 		}
 
 		@Override

@@ -3,10 +3,8 @@ package net.krav.crimsonplague.entity;
 
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 import net.minecraft.world.biome.Biome;
@@ -16,7 +14,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -25,7 +27,6 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.Entity;
@@ -56,12 +57,6 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 						.name("plaguedenderman").tracker(128, 3, true).egg(-1, -1).build());
 	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		Biome[] spawnBiomes = allbiomes(Biome.REGISTRY);
-		EntityRegistry.addSpawn(EntityCustom.class, 20, 1, 1, EnumCreatureType.MONSTER, spawnBiomes);
-	}
-
 	private Biome[] allbiomes(net.minecraft.util.registry.RegistryNamespaced<ResourceLocation, Biome> in) {
 		Iterator<Biome> itr = in.iterator();
 		ArrayList<Biome> ls = new ArrayList<Biome>();
@@ -81,7 +76,7 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 			};
 		});
 	}
-	public static class EntityCustom extends EntityEnderman {
+	public static class EntityCustom extends EntityMob {
 		public EntityCustom(World world) {
 			super(world);
 			setSize(0.5f, 3f);
@@ -93,12 +88,16 @@ public class EntityPlaguedEnderman extends ElementsCrimsonPlague.ModElement {
 		@Override
 		protected void initEntityAI() {
 			super.initEntityAI();
-			this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, false, false));
-			this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
-			this.tasks.addTask(3, new EntityAIAttackMelee(this, 1, true));
-			this.tasks.addTask(4, new EntityAISwimming(this));
-			this.tasks.addTask(5, new EntityAIWander(this, 1));
-			this.tasks.addTask(6, new EntityAIBreakDoor(this));
+			this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true, false));
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayerMP.class, true, false));
+			this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAnimal.class, true, false));
+			this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityVillager.class, true, false));
+			this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true, false));
+			this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, true));
+			this.tasks.addTask(7, new EntityAIAttackMelee(this, 1, true));
+			this.tasks.addTask(8, new EntityAISwimming(this));
+			this.tasks.addTask(9, new EntityAIWander(this, 1));
+			this.tasks.addTask(10, new EntityAIBreakDoor(this));
 		}
 
 		@Override
