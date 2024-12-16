@@ -1,0 +1,289 @@
+{
+  "id_map": {
+    "ENTITY": 14
+  },
+  "mod_elements": [
+    {
+      "name": "PlaguedVillager",
+      "type": "mob",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 1,
+        "1": 2
+      }
+    },
+    {
+      "name": "InfectedKill",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlaguedPig",
+      "type": "mob",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 3,
+        "1": 4
+      }
+    },
+    {
+      "name": "Welcome",
+      "type": "achievement",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PlaguedFlesh",
+      "type": "food",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PlaguedFleshEat",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CrimsonIngot",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "BetterIron",
+      "type": "achievement",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "CraftCrimsonIngot",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "CrimsonSlug",
+      "type": "mob",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 5,
+        "1": 6
+      },
+      "registry_name": "hiveling"
+    },
+    {
+      "name": "Seer",
+      "type": "mob",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 7,
+        "1": 8
+      }
+    },
+    {
+      "name": "ChunkOfPlaguedFlesh",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PlaguedHuman",
+      "type": "mob",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 9,
+        "1": 10
+      }
+    },
+    {
+      "name": "ChunkOfPlaguedFleshRecipe",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "CompactedChunkOfPlaguedFlesh",
+      "type": "block",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PlaguedSheep",
+      "type": "mob",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 11,
+        "1": 12
+      }
+    },
+    {
+      "name": "Eye",
+      "type": "food",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "OrganEaten",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Muscle",
+      "type": "food",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PieceOfTentacle",
+      "type": "food",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "PlaguedEnderman",
+      "type": "mob",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 13,
+        "1": 14
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "parasite_explode1",
+      "file": "zapsplat_explode",
+      "category": "hostile"
+    },
+    {
+      "name": "plaguedvillagerliving",
+      "file": "plaguedillageriving",
+      "category": "hostile"
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "item.muscle.name": "Muscle",
+      "item.pieceoftentacle.name": "Piece Of Tentacle",
+      "item.eye.name": "Eye",
+      "entity.seer.name": "Seer",
+      "advancements.welcome.descr": "Play for the first time!!",
+      "advancements.betteriron.title": "Better Than Iron",
+      "entity.hiveling.name": "Hiveling",
+      "tile.compactedchunkofplaguedflesh.name": "Compacted Chunk Of Plagued Flesh",
+      "advancements.welcome.title": "Crimson Plague",
+      "advancements.betteriron.descr": "Craft Crimson Ingot",
+      "entity.plaguedpig.name": "Plagued Pig",
+      "entity.plaguedsheep.name": "Plagued Sheep",
+      "item.crimsoningot.name": "Crimson Ingot",
+      "entity.plaguedenderman.name": "Plagued Enderman",
+      "entity.plaguedvillager.name": "Plagued Villager",
+      "item.plaguedflesh.name": "Plagued Flesh",
+      "entity.plaguedhuman.name": "Plagued Human",
+      "tile.chunkofplaguedflesh.name": "Chunk Of Plagued Flesh"
+    }
+  },
+  "workspaceSettings": {
+    "modid": "crimsonplague",
+    "modName": "Crimson Plague",
+    "version": "1.0.0",
+    "author": "creat, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "1.12.2",
+    "modElementsPackage": "net.krav.crimsonplague",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202000214217
+}

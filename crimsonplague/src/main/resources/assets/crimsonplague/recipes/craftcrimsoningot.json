@@ -1,0 +1,16 @@
+{
+  "group": "crimsonplague",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "crimsonplague:plaguedflesh"
+    }
+  ],
+  "result": {
+    "item": "crimsonplague:crimsoningot",
+    "count": 1
+  }
+}

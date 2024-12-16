@@ -1,0 +1,26 @@
+{
+  "display": {
+    "background": "crimsonplague:textures/achivement5.png",
+    "icon": {
+      "item": "crimsonplague:plaguedflesh"
+    },
+    "title": {
+      "translate": "advancements.welcome.title"
+    },
+    "description": {
+      "translate": "advancements.welcome.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "welcome": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
+}

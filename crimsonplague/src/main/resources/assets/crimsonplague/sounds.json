@@ -1,0 +1,20 @@
+{
+  "parasite_explode1": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "crimsonplague:zapsplat_explode",
+        "stream": false
+      }
+    ]
+  },
+  "plaguedvillagerliving": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "crimsonplague:plaguedillageriving",
+        "stream": false
+      }
+    ]
+  }
+}

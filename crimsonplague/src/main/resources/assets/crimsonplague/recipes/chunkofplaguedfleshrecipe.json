@@ -1,0 +1,42 @@
+{
+  "group": "crimsonplague",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "1": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "2": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "3": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "4": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "5": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "6": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "7": {
+      "item": "crimsonplague:crimsoningot"
+    },
+    "8": {
+      "item": "crimsonplague:crimsoningot"
+    }
+  },
+  "result": {
+    "item": "crimsonplague:chunkofplaguedflesh",
+    "count": 1
+  }
+}

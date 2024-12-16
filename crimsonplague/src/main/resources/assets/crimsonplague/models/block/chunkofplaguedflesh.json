@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "crimsonplague:blocks/chunkflaguedlesh2",
+    "up": "crimsonplague:blocks/chunkflaguedlesh2",
+    "north": "crimsonplague:blocks/chunkflaguedlesh2",
+    "east": "crimsonplague:blocks/chunkflaguedlesh2",
+    "south": "crimsonplague:blocks/chunkflaguedlesh2",
+    "west": "crimsonplague:blocks/chunkflaguedlesh2",
+    "particle": "crimsonplague:blocks/chunkflaguedlesh2"
+  }
+}
