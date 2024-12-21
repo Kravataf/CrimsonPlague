@@ -123,7 +123,7 @@
         "0": 5,
         "1": 6
       },
-      "registry_name": "hiveling"
+      "registry_name": "lurker"
     },
     {
       "name": "Seer",
@@ -254,8 +254,8 @@
       "item.eye.name": "Eye",
       "entity.seer.name": "Seer",
       "advancements.welcome.descr": "Play for the first time!!",
+      "entity.lurker.name": "Lurker",
       "advancements.betteriron.title": "Better Than Iron",
-      "entity.hiveling.name": "Hiveling",
       "tile.compactedchunkofplaguedflesh.name": "Compacted Chunk Of Plagued Flesh",
       "advancements.welcome.title": "Crimson Plague",
       "advancements.betteriron.descr": "Craft Crimson Ingot",
